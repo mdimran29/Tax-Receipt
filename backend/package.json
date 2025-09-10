@@ -1,0 +1,31 @@
+{
+  "name": "tax-receipt-backend",
+  "version": "1.0.0",
+  "description": "Backend for Tax Receipt generation using OpenLaw",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "openlaw",
+    "tax-receipt",
+    "blockchain",
+    "ethereum"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.0",
+    "express": "^4.18.2",
+    "fs-extra": "^11.1.1",
+    "openlaw": "^0.2.43",
+    "pdfkit": "^0.13.0",
+    "uuid": "^9.0.0",
+    "web3": "^4.2.0"
+  }
+}

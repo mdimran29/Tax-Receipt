@@ -1,0 +1,91 @@
+<%
+==PETITION.IO TAX RECEIPT TEMPLATE==
+
+This template generates a legally binding tax receipt for cryptocurrency staking rewards with digital signatures.
+
+==TEMPLATE VARIABLES==
+ReceiptId: Text
+Timestamp: DateTime
+DonorENS: Text
+WalletAddress: Text
+TxHash: Text
+PrincipalETH: Number
+RewardsETH: Number
+HighestPriceUSD: Number
+CreditedValueUSD: Number
+Allocations: Collection(
+  Structure(
+    Bucket: Text;
+    Percent: Number
+  )
+)
+Disclaimers: LargeText
+IssuerIdentity: Identity
+DonorIdentity: Identity
+ContactEmail: Text
+%>
+
+# Petition.io — Tax Receipt
+
+**Receipt ID:** [[ReceiptId Text]]  
+**Date Issued:** [[Timestamp DateTime]]
+
+---
+
+## Donor Information
+- ENS (optional): [[DonorENS Text]]  
+- Wallet Address: [[WalletAddress Text]]
+
+---
+
+## Transaction Details
+- Transaction Hash: [[TxHash Text]]  
+- Explorer Link: https://etherscan.io/tx/[[TxHash]]
+
+### QR Code
+![Transaction QR](https://quickchart.io/qr?text=https://etherscan.io/tx/[[TxHash]])
+
+---
+
+## Staking Summary
+- Principal Staked (ETH): [[PrincipalETH Number]]  
+- Rewards Earned (ETH): [[RewardsETH Number]]  
+- Highest ETH Price (USD): [[HighestPriceUSD Number]]
+
+[[CreditedValueUSD Number]]: CreditedValueUSD = [[RewardsETH]] * [[HighestPriceUSD]]
+
+- Credited Value (USD): [[CreditedValueUSD]]
+
+---
+
+## Allocation Breakdown
+[[Allocations: Collection(
+  Structure(
+    Bucket Text,
+    Percent Number
+  )
+)]]
+
+[[#Each(Allocations)]]
+- [[Bucket]] — [[Percent]]%
+[[/Each]]
+
+---
+
+## Notes & Disclaimers
+[[Disclaimers LargeText]]
+
+---
+
+## Attestation & Signatures
+This document certifies the above rewards have been credited for tax purposes.  
+Principal amounts are **not credited**.
+
+- Petition.io Authorized Signatory: [[IssuerIdentity Identity]]  
+- Donor Acknowledgement (optional): [[DonorIdentity Identity]]
+
+---
+
+## Reference
+- Project/Org: Petition.io  
+- Contact Email: [[ContactEmail Text]]
